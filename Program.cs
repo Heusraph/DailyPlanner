@@ -6,33 +6,39 @@ namespace DailyPlanner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi Welcome to Daily Planner ");
-            Console.WriteLine("Please enter your name: ");
+            string name = UserName();
 
-            String name = Console.ReadLine();
+            Console.WriteLine($"Hello {name}, let's plan your day!");
 
-            Console.WriteLine("Hello " + name + " Welcome to Daily Planner, Please list down what will you do today.");
-            Console.WriteLine("What will you do this morning? ");
+            string morningRoutine = Task("morning");
+            string noonRoutine = Task("noon");
+            string eveningRoutine = Task("evening");
 
-            String morning = Console.ReadLine();
-
-            Console.WriteLine("That's a wonderful thing to do this morning");
-            Console.WriteLine("How about this noon time?: ");
-
-            String noon = Console.ReadLine();
-
-            Console.WriteLine("You are doing great and productive");
-            Console.WriteLine("It's time for your bed time, what would you still do before bed? ");
-
-            String bed = Console.ReadLine();
-
-            Console.WriteLine("Goodnight " + name + " Sleepwell and hope to see you tomorrow.");
-
-
+            SayGoodbye(name);
 
             Console.ReadKey();
 
-            
         }
+
+        static string UserName()
+        {
+            Console.WriteLine("Hi!, Welcome to Daily Planner!");
+            Console.Write("Please Enter your name: ");
+            return Console.ReadLine();
+        }
+
+        static string Task(string timeofDay)
+        {
+            Console.WriteLine($"What will you do this {timeofDay}?");
+            string task = Console.ReadLine();
+            Console.WriteLine($"That's a wonderfull thing to do this {timeofDay}!");
+            return task;
+        }
+        static void SayGoodbye(string name)
+        {
+            Console.WriteLine($"Goodnight {name}, sleepwell and see you tomorrow!");
+
+        }
+
     }
 }

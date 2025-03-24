@@ -7,14 +7,19 @@ namespace DailyPlanner
         static void Main(string[] args)
         {
             string name = UserName();
+            string name = Userinput.UserName();
 
             Console.WriteLine($"Hello {name}, let's plan your day!");
 
             string morningRoutine = Task("morning");
             string noonRoutine = Task("noon");
             string eveningRoutine = Task("evening");
+            string morningRoutine = Userinput.Task("morning");
+            string noonRoutine = Userinput.Task("noon");
+            string eveningRoutine = Userinput.Task("evening");
 
             SayGoodbye(name);
+            Planner.SayGoodbye(name);
 
             Console.ReadKey();
 

@@ -6,16 +6,18 @@ namespace DailyPlanner
     {
         static void Main(string[] args)
         {
-            string name = Userinput.UserName();
+            string name = UserInput.UserName();
 
             Console.WriteLine($"Hello {name}, let's plan your day!");
 
-            string morningRoutine = Userinput.Task("morning");
-            string noonRoutine = Userinput.Task("noon");
-            string eveningRoutine = Userinput.Task("evening");
+            string[] timesofDay = { "morning", "noon", "evening" };
+            Dictionary<string, List<string>> taskbyTime = new Dictionary<string, List<string>>();
 
+            foreach (var time in timesofDay)
+            {
+                taskbyTime[time] = UserInput.Task(time);
+            }
             Planner.SayGoodbye(name);
-
             Console.ReadKey();
 
         }

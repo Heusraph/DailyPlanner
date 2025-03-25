@@ -10,7 +10,7 @@ namespace DailyPlanner
     {
         public static void SayGoodbye(string name)
         {
-            Console.WriteLine($"Goodnight {name}, sleepwell and hope to see you tomorrow.");
+            Console.WriteLine($"Goodnight {name}, sleep well and hope to see you tomorrow.");
         }
     }
 }

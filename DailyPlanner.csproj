@@ -8,7 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DP.BusinessDataLogic\DP.BusinessDataLogic.csproj" />
+    <Compile Remove="DP.BusinessDataLogic\**" />
+    <Compile Remove="DP.BusinessLogic\**" />
+    <EmbeddedResource Remove="DP.BusinessDataLogic\**" />
+    <EmbeddedResource Remove="DP.BusinessLogic\**" />
+    <None Remove="DP.BusinessDataLogic\**" />
+    <None Remove="DP.BusinessLogic\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="DP.BusinessLogic\DP.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>
